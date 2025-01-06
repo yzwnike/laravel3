@@ -27,3 +27,5 @@ Route::get('/country/inependence/{year1}/{year2}', [CountryController::class, 'g
 Route::get('/country/letter/{letter}', [CountryController::class, 'getCountriesByFirstLetter']);
 
 Route::get('/country/stats/{code}', [CountryController::class, 'getCountryStats']);
+
+Route::get('/country/officialang', [CountryController::class, 'getCountriesWithOfficialLanguage']);

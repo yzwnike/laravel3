@@ -98,6 +98,17 @@ class CountryController extends Controller
         ]);
     }
 
+    // h: /country/officialang
+    public function getCountriesWithOfficialLanguage()
+    {
+        $countries = DB::table('countrylanguage')
+            ->join('country', 'countrylanguage.CountryCode', '=', 'country.code')
+            ->where('countrylanguage.IsOfficial', 'T')
+            ->get(['country.name', 'countrylanguage.Language']);
+
+        return response()->json($countries);
+    }
+
     
 
     
