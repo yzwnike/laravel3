@@ -26,4 +26,16 @@ class CityController extends Controller
 
         return response()->json($cities);
     }
+
+    // c: /country/withzerocities
+    public function getCountriesWithZeroCities()
+    {
+        $countries = DB::table('country')
+            ->leftJoin('city', 'country.code', '=', 'city.countrycode')
+            ->groupBy('country.code')
+            ->havingRaw('COUNT(city.id) = 0')
+            ->get(['country.name']);
+
+        return response()->json($countries);
+    }
 }

@@ -18,3 +18,4 @@ Route::get('/country/{continent}', [CountryController::class, 'getCountriesByCon
 
 Route::get('/country/orderbysize', [CountryController::class, 'getCountriesOrderedBySize']);
 
+Route::get('/country/withzerocities', [CountryController::class, 'getCountriesWithZeroCities']);
