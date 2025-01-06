@@ -38,4 +38,30 @@ class CityController extends Controller
 
         return response()->json($countries);
     }
+
+    // d: /country/independencenull
+    public function getCountriesWithNoIndependence()
+    {
+        $countries = DB::table('country')
+            ->whereNull('indepyear')
+            ->get(['name']);
+
+        return response()->json($countries);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
