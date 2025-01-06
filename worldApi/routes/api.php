@@ -23,3 +23,5 @@ Route::get('/country/withzerocities', [CountryController::class, 'getCountriesWi
 Route::get('/country/independencenull', [CountryController::class, 'getCountriesWithNoIndependence']);
 
 Route::get('/country/inependence/{year1}/{year2}', [CountryController::class, 'getCountriesByIndependenceYear']);
+
+Route::get('/country/letter/{letter}', [CountryController::class, 'getCountriesByFirstLetter']);
