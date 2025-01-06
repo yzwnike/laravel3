@@ -21,5 +21,16 @@ class CountryController extends Controller
 
         return response()->json($countries);
     }
+    public function getCountriesOrderedBySize()
+    {
+        $countries = DB::table('country')
+            ->orderBy('surfacearea', 'asc')
+            ->get(['name', 'surfacearea']);
+
+        return response()->json($countries);
+    }
+
+    
+
 
 }

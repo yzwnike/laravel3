@@ -15,3 +15,6 @@ Route::middleware('api')->get('/languages', [LanguageController::class, 'index']
 
 
 Route::get('/country/{continent}', [CountryController::class, 'getCountriesByContinent']);
+
+Route::get('/country/orderbysize', [CountryController::class, 'getCountriesOrderedBySize']);
+
