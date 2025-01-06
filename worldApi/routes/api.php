@@ -29,3 +29,7 @@ Route::get('/country/letter/{letter}', [CountryController::class, 'getCountriesB
 Route::get('/country/stats/{code}', [CountryController::class, 'getCountryStats']);
 
 Route::get('/country/officialang', [CountryController::class, 'getCountriesWithOfficialLanguage']);
+
+Route::get('/city/orderbyname', [CityController::class, 'getCitiesOrderedByName']);
+
+Route::get('/city/top/{numTop}', [CityController::class, 'getTopCitiesByPopulation']);
