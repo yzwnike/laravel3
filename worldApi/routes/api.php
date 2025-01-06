@@ -25,3 +25,5 @@ Route::get('/country/independencenull', [CountryController::class, 'getCountries
 Route::get('/country/inependence/{year1}/{year2}', [CountryController::class, 'getCountriesByIndependenceYear']);
 
 Route::get('/country/letter/{letter}', [CountryController::class, 'getCountriesByFirstLetter']);
+
+Route::get('/country/stats/{code}', [CountryController::class, 'getCountryStats']);

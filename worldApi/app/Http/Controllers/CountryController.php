@@ -75,6 +75,29 @@ class CountryController extends Controller
         return response()->json($countries);
     }
 
+    // g: /country/stats/{code}
+    public function getCountryStats($code)
+    {
+        $country = DB::table('country')
+            ->where('code', $code)
+            ->first(['name']);
+
+        if (!$country) {
+            return response()->json(['error' => 'Country not found'], 404);
+        }
+
+        $cityStats = DB::table('city')
+            ->where('countrycode', $code)
+            ->selectRaw('AVG(population) as avg_population, COUNT(id) as num_cities')
+            ->first();
+
+        return response()->json([
+            'country' => $country->name,
+            'avg_population' => $cityStats->avg_population,
+            'num_cities' => $cityStats->num_cities
+        ]);
+    }
+
     
 
     
