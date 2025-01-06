@@ -13,3 +13,5 @@ Route::get('/language/{language}', [LanguageController::class, 'show']);
 
 Route::middleware('api')->get('/languages', [LanguageController::class, 'index']);
 
+
+Route::get('/country/{continent}', [CountryController::class, 'getCountriesByContinent']);
