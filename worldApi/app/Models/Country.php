@@ -9,7 +9,9 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $table = 'country'; 
-    protected $primaryKey = 'Code'; 
-    public $timestamps = false; 
+    // Definir la relación muchos a muchos con Language
+    public function languages()
+    {
+        return $this->belongsToMany(Language::class, 'countrylanguage', 'CountryCode', 'Language');
+    }
 }

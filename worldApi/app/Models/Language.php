@@ -9,13 +9,9 @@ class Language extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', // Nombre del idioma
-    ];
-
-    // Relación con los países
+    // Definir la relación muchos a muchos con Country
     public function countries()
     {
-        return $this->belongsToMany(Country::class, 'countrylanguage', 'language_id', 'country_id');
+        return $this->belongsToMany(Country::class, 'countrylanguage', 'Language', 'CountryCode');
     }
 }
