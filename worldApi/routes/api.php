@@ -33,3 +33,4 @@ Route::get('/country/officialang', [CountryController::class, 'getCountriesWithO
 Route::get('/city/orderbyname', [CityController::class, 'getCitiesOrderedByName']);
 
 Route::get('/city/top/{numTop}', [CityController::class, 'getTopCitiesByPopulation']);
+
