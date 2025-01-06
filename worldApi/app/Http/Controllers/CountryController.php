@@ -21,6 +21,9 @@ class CountryController extends Controller
 
         return response()->json($countries);
     }
+
+
+    // b: /country/orderbysize
     public function getCountriesOrderedBySize()
     {
         $countries = DB::table('country')
