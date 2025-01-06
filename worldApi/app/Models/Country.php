@@ -9,14 +9,7 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', 
-        'code', 
-    ];
-
-    
-    public function languages()
-    {
-        return $this->belongsToMany(Language::class, 'countrylanguage', 'country_id', 'language_id');
-    }
+    protected $table = 'country'; 
+    protected $primaryKey = 'Code'; 
+    public $timestamps = false; 
 }
