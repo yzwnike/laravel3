@@ -21,3 +21,5 @@ Route::get('/country/orderbysize', [CountryController::class, 'getCountriesOrder
 Route::get('/country/withzerocities', [CountryController::class, 'getCountriesWithZeroCities']);
 
 Route::get('/country/independencenull', [CountryController::class, 'getCountriesWithNoIndependence']);
+
+Route::get('/country/inependence/{year1}/{year2}', [CountryController::class, 'getCountriesByIndependenceYear']);

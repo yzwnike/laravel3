@@ -49,6 +49,16 @@ class CityController extends Controller
         return response()->json($countries);
     }
 
+    // e: /country/inependence/{year1}/{year2}
+    public function getCountriesByIndependenceYear($year1, $year2)
+    {
+        $countries = DB::table('country')
+            ->whereBetween('indepyear', [$year1, $year2])
+            ->get(['name', 'indepyear']);
+
+        return response()->json($countries);
+    }
+
 
 
 
