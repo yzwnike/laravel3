@@ -9,6 +9,9 @@ Route::get('/', function () {
 Route::get('/languages', [LanguageController::class, 'index']);
 Route::get('/language/{language}', [LanguageController::class, 'show']);
 
+
+
+
 // Rutas para el controlador de países
 Route::get('/country/{continent}', [CountryController::class, 'getCountriesByContinent']);
 Route::get('/country/orderbysize', [CountryController::class, 'getCountriesOrderedBySize']);
@@ -19,6 +22,10 @@ Route::get('/country/letter/{letter}', [CountryController::class, 'getCountriesB
 Route::get('/country/stats/{code}', [CountryController::class, 'getCountryStats']);
 Route::get('/country/officialang', [CountryController::class, 'getCountriesWithOfficialLanguage']);
 
+
+
+
 // Rutas para el controlador de ciudades
 Route::get('/city/orderbyname', [CityController::class, 'getCitiesOrderedByName']);
 Route::get('/city/top/{numTop}', [CityController::class, 'getTopCitiesByPopulation']);
+
